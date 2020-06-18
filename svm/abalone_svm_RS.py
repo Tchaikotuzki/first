@@ -43,16 +43,6 @@ x=StandardScaler().fit_transform(x)
 
 Xtrain,Xtest,Ytrain,Ytest=train_test_split(x,y,test_size=0.3,random_state=420)
 
-# Kernel=["linear","poly","rbf","sigmoid"]
-
-# for kernel in Kernel:
-#     clf= SVC(kernel = kernel
-#              , gamma="auto"
-#              , degree = 1
-#              , cache_size=5000
-#             ).fit(Xtrain,Ytrain)
-#     print("The accuracy under kernel %s is %f" % (kernel,clf.score(Xtest,Ytest)))
-
 
 # 随机搜索
 gamma_range = np.logspace(-10,1,50)#规定参数搜索的范围，这里用的是对数刻度
@@ -65,38 +55,6 @@ rs_clf.fit(Xtrain, Ytrain)
 
 print("The best parameters are %s with a score of %0.5f" % (rs_clf.best_params_, rs_clf.best_score_))
 
-#通过画学习曲线找到最优gamma值
-# score = []
-# gamma_range = np.logspace(-10, 1, 50) #返回在对数刻度上均匀间隔的数字
-# for i in gamma_range:
-#     clf = SVC(kernel="rbf",gamma = i,cache_size=5000).fit(Xtrain,Ytrain)
-#     score.append(clf.score(Xtest,Ytest))
-    
-# print(max(score), gamma_range[score.index(max(score))])
-# plt.plot(gamma_range,score)
-# plt.show()
-
-#调线性核函数
-# score = []
-# C_range = np.linspace(0.01,30,50)
-# for i in C_range:
-#     clf = SVC(kernel="linear",C=i,cache_size=5000).fit(Xtrain,Ytrain)
-#     score.append(clf.score(Xtest,Ytest))
-    
-# print(max(score), C_range[score.index(max(score))])
-# plt.plot(C_range,score)
-# plt.show()
-
-#用学习曲线调参C
-# score = []
-# C_range = np.linspace(0.01,30,50)
-# for i in C_range:
-#     clf = SVC(kernel="rbf",C=i,gamma = 0.7543120063354607,cache_size=5000).fit(Xtrain,Ytrain)
-#     score.append(clf.score(Xtest,Ytest))
-    
-# print(max(score), C_range[score.index(max(score))])
-# plt.plot(C_range,score)
-# plt.show()
 
 #网格搜索
 # gamma_range = np.logspace(-10,1,50)
