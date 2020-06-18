@@ -1,0 +1,13 @@
+abalone_svm
+The accuracy under kernel linear is 0.210526
+The accuracy under kernel poly is 0.192982
+The accuracy under kernel rbf is 0.210526
+The accuracy under kernel sigmoid is 0.145933
+
+abalone_svm_RS
+最好结果在0.25975左右
+
+abalone_svm_plt
+best gamma值：0.7543120063354607（局部）
+best C 值：1.2340816326530631（局部）
+最好结果在0.23285486443381181
